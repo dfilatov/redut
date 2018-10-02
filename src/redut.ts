@@ -62,10 +62,10 @@ function createReducer<TState, TActionCreators extends ActionCreators>(
 ): (
     state: TState | undefined,
     action:
-    ExtractActionByType<
-        ReturnType<Values<TActionCreators>>,
-        ExtractActionType<Values<TActionCreators>> & string
-    >
+        ExtractActionByType<
+            ReturnType<Values<TActionCreators>>,
+            ExtractActionType<Values<TActionCreators>> & string
+        >
 ) => TState {
     return (state = initialState, action) => action.type in actionHandlers?
         actionHandlers[action.type]!(state, action) :
