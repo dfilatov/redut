@@ -13,11 +13,9 @@ interface ActionWithPayloadCreator<TType extends string, TPayload> {
     (payload: TPayload): Action<TType, TPayload>;
 }
 
-type ActionCreator<TType extends string, TPayload = void> = TPayload extends void?
+type ActionCreator<TType extends string, TPayload = void, TFix = TPayload> = TPayload extends void?
     ActionWithoutPayloadCreator<TType> :
-    TPayload extends boolean?
-        ActionWithPayloadCreator<TType, boolean> :
-        ActionWithPayloadCreator<TType, TPayload>;
+    ActionWithPayloadCreator<TType, TFix>;
 
 function createAction<TType extends string>(type: TType): <TPayload>() => ActionCreator<TType, TPayload> {
     function res<TPayload>(): ActionCreator<TType, TPayload> {
@@ -35,10 +33,9 @@ type ActionCreators = Record<string, ActionCreator<string, any>>;
 
 type ExtractActionType<
     TActionCreator extends ActionWithoutPayloadCreator<string> | ActionWithPayloadCreator<string, any>
-> =
-    ReturnType<TActionCreator> extends Action<infer TType, any>?
-        TType extends string? TType : never :
-        never;
+> = ReturnType<TActionCreator> extends Action<infer TType, any>?
+    TType extends string? TType : never :
+    never;
 
 type Values<T extends object> = T[keyof T];
 
