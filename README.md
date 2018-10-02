@@ -16,7 +16,7 @@ export const decrement = createAction('DECREMENT')<void>();
 
 // actions with payload
 export const incrementBy = createAction('INCREMENT_BY')<number>(); // `number` is a type of payload
-export const incrementBy = createAction('DECREMENT_BY')<number>();
+export const decrementBy = createAction('DECREMENT_BY')<number>();
 ```
 
 `counterReducer.ts`:
