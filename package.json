@@ -31,6 +31,6 @@
   "scripts": {
     "lint": "tsc --noEmit && tslint --project .",
     "test": "jest",
-    "build": "tsc"
+    "build": "rm -rf lib && tsc"
   }
 }
