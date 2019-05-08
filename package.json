@@ -1,6 +1,6 @@
 {
   "name": "redut",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Minimal library to build type-safe redux applications with TypeScript",
   "keywords": [
     "typescript",
