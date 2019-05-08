@@ -18,14 +18,14 @@
   "main": "lib/redut.js",
   "types": "lib/redut.d.ts",
   "devDependencies": {
-    "@types/jest": "23.3.2",
-    "jest": "23.6.0",
-    "ts-jest": "23.10.3",
-    "tslint": "5.11.0",
-    "tslint-consistent-codestyle": "1.13.3",
+    "@types/jest": "24.0.12",
+    "jest": "24.8.0",
+    "ts-jest": "24.0.2",
+    "tslint": "5.16.0",
+    "tslint-consistent-codestyle": "1.15.1",
     "tslint-eslint-rules": "5.4.0",
-    "tslint-sonarts": "1.8.0",
-    "typescript": "3.1.1"
+    "tslint-sonarts": "1.9.0",
+    "typescript": "3.4.5"
   },
   "license": "MIT",
   "scripts": {

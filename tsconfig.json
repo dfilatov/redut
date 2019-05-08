@@ -3,6 +3,7 @@
         "outDir": "./lib",
         "module": "commonjs",
         "target" : "es5",
+        "lib" : ["es2015"],
         "declaration": true,
         "noImplicitAny": true,
         "noImplicitThis": true,
